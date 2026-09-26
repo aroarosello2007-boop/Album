@@ -8,75 +8,207 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
- margin:0;font-family:Arial,sans-serif;
+ margin:0;
+ font-family:Arial,sans-serif;
  background:linear-gradient(135deg,#fff4f8,#eef7ff);
  color:#34445a
 }
+
 header{
- background:#fff;position:sticky;top:0;z-index:5;
- padding:15px;box-shadow:0 3px 15px #0001
+ background:#fff;
+ position:sticky;
+ top:0;
+ z-index:5;
+ padding:15px;
+ box-shadow:0 3px 15px #0001
 }
-h1{margin:0;color:#d95b8b;font-size:24px}
-nav{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+
+h1{
+ margin:0;
+ color:#d95b8b;
+ font-size:24px
+}
+
+nav{
+ display:flex;
+ gap:7px;
+ flex-wrap:wrap;
+ margin-top:12px
+}
+
 button{
- border:0;border-radius:12px;padding:10px 14px;
- cursor:pointer;font-weight:bold
+ border:0;
+ border-radius:12px;
+ padding:10px 14px;
+ cursor:pointer;
+ font-weight:bold
 }
-nav button{background:#edf5ff;color:#456}
-nav button.active{background:#f4a2c2;color:white}
-main{max-width:1100px;margin:auto;padding:15px}
+
+button:disabled{
+ opacity:.5;
+ cursor:not-allowed
+}
+
+nav button{
+ background:#edf5ff;
+ color:#456
+}
+
+nav button.active{
+ background:#f4a2c2;
+ color:white
+}
+
+main{
+ max-width:1100px;
+ margin:auto;
+ padding:15px
+}
+
 .card{
- background:white;border-radius:20px;padding:18px;
- margin-bottom:15px;box-shadow:0 5px 25px #0000000d
+ background:white;
+ border-radius:20px;
+ padding:18px;
+ margin-bottom:15px;
+ box-shadow:0 5px 25px #0000000d
 }
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.stat{background:#fff0f6;border-radius:15px;padding:15px}
-.stat b{display:block;font-size:25px;color:#d95b8b}
+
+.stats{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:10px
+}
+
+.stat{
+ background:#fff0f6;
+ border-radius:15px;
+ padding:15px
+}
+
+.stat b{
+ display:block;
+ font-size:25px;
+ color:#d95b8b
+}
+
 .category{
- background:white;border:1px solid #eee;border-radius:16px;
- margin:8px 0;overflow:hidden
+ background:white;
+ border:1px solid #eee;
+ border-radius:16px;
+ margin:8px 0;
+ overflow:hidden
 }
+
 .category button.title{
- width:100%;background:white;text-align:left;
- display:flex;justify-content:space-between
+ width:100%;
+ background:white;
+ text-align:left;
+ display:flex;
+ justify-content:space-between
 }
+
 .stickers{
- display:grid;grid-template-columns:repeat(auto-fill,minmax(75px,1fr));
- gap:8px;padding:12px;background:#fafcff
+ display:grid;
+ grid-template-columns:repeat(auto-fill,minmax(75px,1fr));
+ gap:8px;
+ padding:12px;
+ background:#fafcff
 }
+
 .sticker{
- min-height:75px;background:#e8ebef;
+ min-height:75px;
+ background:#e8ebef;
  border:2px solid transparent
 }
-.sticker.owned{background:#ffeaf3;border-color:#f3a0bf}
-.badge{display:block;font-size:10px;margin-top:4px}
+
+.sticker.owned{
+ background:#ffeaf3;
+ border-color:#f3a0bf
+}
+
+.badge{
+ display:block;
+ font-size:10px;
+ margin-top:4px
+}
+
 .common{background:#e8ebef}
 .rare{background:#d9edff}
 .epic{background:#eadcff}
 .legendary{background:#fff0a8}
 .mystery{background:#ffd5d5}
+
 .envelopes{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
  gap:12px
 }
+
 .envelope{
- padding:18px;border-radius:18px;background:white;
+ padding:18px;
+ border-radius:18px;
+ background:white;
  border:3px solid #ddd
 }
+
 .envelope.rare{border-color:#75b7f0}
 .envelope.epic{border-color:#a879db}
 .envelope.legendary{border-color:#e5c83e}
 .envelope.mystery{border-color:#e57373}
-.primary{background:#ed8fb3;color:white}
-.secondary{background:#eaf3ff;color:#456}
-.danger{background:#ffdede;color:#922}
-table{width:100%;border-collapse:collapse}
-td,th{padding:10px;border-bottom:1px solid #eee;text-align:left}
-.admin{border:2px dashed #e17b9f}
-input{padding:12px;border:1px solid #ddd;border-radius:10px}
+
+.primary{
+ background:#ed8fb3;
+ color:white
+}
+
+.secondary{
+ background:#eaf3ff;
+ color:#456
+}
+
+.danger{
+ background:#ffdede;
+ color:#922
+}
+
+.success{
+ background:#dff7e8;
+ color:#176b38
+}
+
+table{
+ width:100%;
+ border-collapse:collapse
+}
+
+td,th{
+ padding:10px;
+ border-bottom:1px solid #eee;
+ text-align:left
+}
+
+.admin{
+ border:2px dashed #e17b9f
+}
+
+input{
+ padding:12px;
+ border:1px solid #ddd;
+ border-radius:10px
+}
+
+.puntos{
+ font-size:20px;
+ color:#d95b8b;
+ font-weight:bold
+}
+
 @media(max-width:650px){
- .stats{grid-template-columns:1fr 1fr}
+ .stats{
+  grid-template-columns:1fr 1fr
+ }
 }
 </style>
 </head>
@@ -85,6 +217,7 @@ input{padding:12px;border:1px solid #ddd;border-radius:10px}
 
 <header>
 <h1>💗 Álbum de Amor</h1>
+
 <nav>
 <button class="active" onclick="mostrar('album',this)">Álbum</button>
 <button onclick="mostrar('sobres',this)">Sobres</button>
@@ -99,30 +232,63 @@ input{padding:12px;border:1px solid #ddd;border-radius:10px}
 <script>
 
 const categorias=[
-["Enero",12,"common"],["Febrero",12,"common"],
-["Marzo",12,"common"],["Abril",12,"common"],
-["Mayo",12,"common"],["Junio",12,"common"],
-["Julio",12,"common"],["Agosto",12,"common"],
-["Septiembre",12,"common"],["Octubre",12,"common"],
-["Noviembre",12,"common"],["Diciembre",12,"common"],
+["Enero",12,"common"],
+["Febrero",12,"common"],
+["Marzo",12,"common"],
+["Abril",12,"common"],
+["Mayo",12,"common"],
+["Junio",12,"common"],
+["Julio",12,"common"],
+["Agosto",12,"common"],
+["Septiembre",12,"common"],
+["Octubre",12,"common"],
+["Noviembre",12,"common"],
+["Diciembre",12,"common"],
 ["Momentos especiales",6,"epic"],
 ["Primeras fotos",8,"legendary"],
-["Restaurantes",12,"rare"],["Viajes",8,"rare"],
-["Alpha",3,"epic"],["Molly",3,"epic"],
-["Besos",10,"epic"],["Risas",12,"rare"],
-["Siestas",10,"rare"],["Basket",12,"common"],
-["Fallas",10,"common"],["Cumpleaños",10,"epic"],
-["Bolos",12,"common"],["Fotos desprevenida",12,"rare"],
-["Fotomatón",11,"epic"],["Cine",12,"common"],
+["Restaurantes",12,"rare"],
+["Viajes",8,"rare"],
+["Alpha",3,"epic"],
+["Molly",3,"epic"],
+["Besos",10,"epic"],
+["Risas",12,"rare"],
+["Siestas",10,"rare"],
+["Basket",12,"common"],
+["Fallas",10,"common"],
+["Cumpleaños",10,"epic"],
+["Bolos",12,"common"],
+["Fotos desprevenida",12,"rare"],
+["Fotomatón",11,"epic"],
+["Cine",12,"common"],
 ["Fotos favoritas",6,"legendary"]
 ];
 
 const rareza={
- common:{nombre:"Común",coste:10,max:4},
- rare:{nombre:"Raro",coste:20,max:3},
- epic:{nombre:"Épico",coste:30,max:2},
- legendary:{nombre:"Legendario",coste:40,max:1},
- mystery:{nombre:"Misterio",coste:60,max:1}
+ common:{
+  nombre:"Común",
+  coste:10,
+  max:4
+ },
+ rare:{
+  nombre:"Raro",
+  coste:20,
+  max:3
+ },
+ epic:{
+  nombre:"Épico",
+  coste:30,
+  max:2
+ },
+ legendary:{
+  nombre:"Legendario",
+  coste:40,
+  max:1
+ },
+ mystery:{
+  nombre:"Misterio",
+  coste:60,
+  max:1
+ }
 };
 
 let stickers=[];
@@ -130,6 +296,7 @@ let numero=1;
 
 categorias.forEach(c=>{
  for(let i=1;i<=c[1];i++){
+
   stickers.push({
    id:numero++,
    categoria:c[0],
@@ -137,6 +304,7 @@ categorias.forEach(c=>{
    copias:0,
    nombre:""
   });
+
  }
 });
 
@@ -144,392 +312,1263 @@ let sobres=[];
 let solicitudes=[];
 let retos=[];
 
-/* 60 retos, cada uno con 2 apariciones = 120 asignaciones */
+let admin=false;
+let vista="album";
+
+/*
+  Guardamos qué categorías están abiertas.
+  Así, cuando pulsamos un cromo,
+  la categoría permanece abierta.
+*/
+let categoriasAbiertas=new Set();
+
+/*
+  60 retos diferentes.
+  Cada reto aparece dos veces = 120 asignaciones.
+*/
 for(let i=1;i<=120;i++){
+
  retos.push({
   id:i,
   retoOriginal:((i-1)%60)+1,
   estado:"disponible",
   sobre:null
  });
+
 }
 
-let admin=false;
-let vista="album";
+
+/* =========================
+   GUARDADO
+========================= */
 
 function guardar(){
+
  localStorage.setItem("albumAmor",JSON.stringify({
-  stickers,sobres,solicitudes,retos
+
+  stickers,
+  sobres,
+  solicitudes,
+  retos
+
  }));
+
 }
 
+
+/* =========================
+   CARGA
+========================= */
+
 function cargar(){
+
  const d=localStorage.getItem("albumAmor");
+
  if(!d)return;
- const x=JSON.parse(d);
- stickers=x.stickers||stickers;
- sobres=x.sobres||[];
- solicitudes=x.solicitudes||[];
- retos=x.retos||retos;
+
+ try{
+
+  const x=JSON.parse(d);
+
+  stickers=x.stickers||stickers;
+  sobres=x.sobres||[];
+  solicitudes=x.solicitudes||[];
+  retos=x.retos||retos;
+
+ }catch(e){
+
+  console.log("No se pudieron cargar los datos.");
+
+ }
+
 }
 
 cargar();
 
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
 function mostrar(v,boton){
+
  vista=v;
+
  document.querySelectorAll("nav button")
  .forEach(x=>x.classList.remove("active"));
- if(boton)boton.classList.add("active");
+
+ if(boton){
+  boton.classList.add("active");
+ }
 
  if(v==="album")album();
  if(v==="sobres")sobresVista();
  if(v==="canje")canje();
  if(v==="stats")estadisticas();
  if(v==="admin")adminVista();
+
 }
+
+
+/* =========================
+   ÁLBUM
+========================= */
 
 function album(){
 
  let unicos=stickers.filter(x=>x.copias>0).length;
- let extras=stickers.reduce((a,x)=>a+Math.max(0,x.copias-1),0);
+
+ let extras=stickers.reduce(
+  (a,x)=>a+Math.max(0,x.copias-1),
+  0
+ );
 
  document.getElementById("app").innerHTML=`
+
  <div class="card">
- <h2>Mi álbum 💗</h2>
- <div class="stats">
- <div class="stat">Stickers únicos<b>${unicos}/301</b></div>
- <div class="stat">Duplicados<b>${extras}</b></div>
- <div class="stat">Recibidos<b>${stickers.reduce((a,x)=>a+x.copias,0)}</b></div>
- <div class="stat">Categorías<b>${categoriasCompletadas()}</b></div>
- </div>
+
+  <h2>Mi álbum 💗</h2>
+
+  <div class="stats">
+
+   <div class="stat">
+    Stickers únicos
+    <b>${unicos}/301</b>
+   </div>
+
+   <div class="stat">
+    Duplicados
+    <b>${extras}</b>
+   </div>
+
+   <div class="stat">
+    Recibidos
+    <b>${stickers.reduce((a,x)=>a+x.copias,0)}</b>
+   </div>
+
+   <div class="stat">
+    Categorías
+    <b>${categoriasCompletadas()}</b>
+   </div>
+
+  </div>
+
  </div>
 
  <div class="card">
- <h2>Mis stickers</h2>
- ${categorias.map((c,i)=>categoriaHTML(c,i)).join("")}
+
+  <h2>Mis stickers</h2>
+
+  ${categorias.map((c,i)=>categoriaHTML(c,i)).join("")}
+
  </div>
+
  `;
+
 }
+
 
 function categoriasCompletadas(){
+
  return categorias.filter(c=>
-  stickers.filter(s=>s.categoria===c[0]&&s.copias>0).length===c[1]
+
+  stickers.filter(
+   s=>s.categoria===c[0] && s.copias>0
+  ).length===c[1]
+
  ).length+"/"+categorias.length;
+
 }
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
 
 function categoriaHTML(c,i){
 
- const lista=stickers.filter(s=>s.categoria===c[0]);
+ const lista=stickers.filter(
+  s=>s.categoria===c[0]
+ );
+
+ const abierta=categoriasAbiertas.has(i);
 
  return `
+
  <div class="category">
- <button class="title" onclick="abrirCategoria(${i})">
- <span>${c[0]}</span>
- <span id="arrow${i}">⌄</span>
- </button>
- <div id="cat${i}" style="display:none">
- <div class="stickers">
- ${lista.map(s=>`
- <button class="sticker ${s.rareza} ${s.copias?'owned':''}"
- onclick="tocarSticker(${s.id})">
- <strong>${String(s.id).padStart(3,"0")}</strong>
- <span class="badge">
- ${rareza[s.rareza].nombre}
- ${s.copias>1?" ×"+s.copias:""}
- </span>
- </button>
- `).join("")}
+
+  <button
+   class="title"
+   onclick="abrirCategoria(${i})">
+
+   <span>${c[0]}</span>
+
+   <span id="arrow${i}">
+    ${abierta?"⌃":"⌄"}
+   </span>
+
+  </button>
+
+  <div
+   id="cat${i}"
+   style="display:${abierta?"block":"none"}">
+
+   <div class="stickers">
+
+    ${lista.map(s=>`
+
+     <button
+      class="sticker ${s.rareza} ${s.copias?'owned':''}"
+      onclick="tocarSticker(${s.id})">
+
+      <strong>
+       ${String(s.id).padStart(3,"0")}
+      </strong>
+
+      <span class="badge">
+
+       ${rareza[s.rareza].nombre}
+
+       ${s.copias>1
+        ?" ×"+s.copias
+        :""
+       }
+
+      </span>
+
+     </button>
+
+    `).join("")}
+
+   </div>
+
+  </div>
+
  </div>
- </div>
- </div>
+
  `;
+
 }
 
+
 function abrirCategoria(i){
- const x=document.getElementById("cat"+i);
- const a=document.getElementById("arrow"+i);
- if(x.style.display==="none"){
-  x.style.display="block";a.innerText="⌃";
+
+ if(categoriasAbiertas.has(i)){
+
+  categoriasAbiertas.delete(i);
+
  }else{
-  x.style.display="none";a.innerText="⌄";
+
+  categoriasAbiertas.add(i);
+
  }
+
+ album();
+
 }
+
+
+/* =========================
+   TOCAR STICKER
+========================= */
 
 function tocarSticker(id){
 
  const s=stickers.find(x=>x.id===id);
 
+ if(!s)return;
+
  if(s.copias===0){
+
   s.copias=1;
- }else if(s.copias<rareza[s.rareza].max){
+
+ }else if(
+  s.copias<rareza[s.rareza].max
+ ){
+
   s.copias++;
+
  }else{
-  alert("Has alcanzado el máximo de copias de este sticker.");
+
+  alert(
+   "Has alcanzado el máximo de copias de este sticker."
+  );
+
   return;
+
  }
 
+ /*
+  Guardamos la categoría como abierta
+  antes de reconstruir el álbum.
+ */
+ const indice=categorias.findIndex(
+  c=>c[0]===s.categoria
+ );
+
+ categoriasAbiertas.add(indice);
+
  guardar();
+
  album();
+
 }
+
+
+/* =========================
+   PUNTOS
+========================= */
+
+function calcularPuntos(){
+
+ return stickers.reduce((total,s)=>{
+
+  const duplicados=Math.max(
+   0,
+   s.copias-1
+  );
+
+  if(s.rareza==="common"){
+   return total+duplicados;
+  }
+
+  if(s.rareza==="rare"){
+   return total+(duplicados*2);
+  }
+
+  if(s.rareza==="epic"){
+   return total+(duplicados*5);
+  }
+
+  return total;
+
+ },0);
+
+}
+
+
+/*
+  Puntos que ya están reservados
+  en solicitudes pendientes o aceptadas.
+*/
+function puntosReservados(){
+
+ return solicitudes.reduce(
+  (total,s)=>{
+
+   if(
+    s.estado==="pendiente" ||
+    s.estado==="aceptada"
+   ){
+
+    return total+(s.coste||0);
+
+   }
+
+   return total;
+
+  },
+  0
+ );
+
+}
+
+
+function puntosDisponibles(){
+
+ return Math.max(
+  0,
+  calcularPuntos()-puntosReservados()
+ );
+
+}
+
+
+/* =========================
+   COSTE DE SOBRES
+========================= */
+
+function costeSobre(tipo){
+
+ let coste=rareza[tipo].coste;
+
+ /*
+  Sábado = mitad de precio.
+ */
+ if(new Date().getDay()===6){
+
+  coste=Math.ceil(coste/2);
+
+ }
+
+ return coste;
+
+}
+
+
+/* =========================
+   SOBRES
+========================= */
 
 function sobresVista(){
 
  const tipos=[
- ["common","Común",120],
- ["rare","Raro",50],
- ["epic","Épico",25],
- ["legendary","Legendario",4],
- ["mystery","Misterio",5]
+
+  ["common","Común",120],
+  ["rare","Raro",50],
+  ["epic","Épico",25],
+  ["legendary","Legendario",4],
+  ["mystery","Misterio",5]
+
  ];
 
  document.getElementById("app").innerHTML=`
- <div class="card">
- <h2>📦 Sobres</h2>
- <p>Cada sobre aprobado recibe un reto asignado.</p>
- <div class="envelopes">
- ${tipos.map(t=>`
- <div class="envelope ${t[0]}">
- <h3>${t[1]}</h3>
- <p>${t[2]} sobres disponibles</p>
- <p>Coste: ${rareza[t[0]].coste}</p>
- <button class="primary"
- onclick="solicitar('${t[0]}')">
- Solicitar sobre
- </button>
- </div>
- `).join("")}
- </div>
- </div>
 
  <div class="card">
- <h2>Mis sobres</h2>
- ${listaSobres()}
+
+  <h2>📦 Sobres</h2>
+
+  <p>
+   Puntos disponibles:
+   <span class="puntos">
+    ${puntosDisponibles()}
+   </span>
+  </p>
+
+  <p>
+   Los sobres se solicitan al administrador.
+  </p>
+
+  <div class="envelopes">
+
+   ${tipos.map(t=>{
+
+    const coste=costeSobre(t[0]);
+
+    const suficientes=
+     puntosDisponibles()>=coste;
+
+    return `
+
+     <div class="envelope ${t[0]}">
+
+      <h3>${t[1]}</h3>
+
+      <p>
+       ${t[2]} sobres disponibles
+      </p>
+
+      <p>
+       Coste:
+       <strong>${coste}</strong>
+       puntos
+      </p>
+
+      <button
+       class="${suficientes?'primary':'secondary'}"
+       ${suficientes?"":"disabled"}
+       onclick="${suficientes
+        ?`solicitar('${t[0]}')`
+        :""
+       }">
+
+       ${suficientes
+        ?"Solicitar sobre"
+        :"Puntos insuficientes"
+       }
+
+      </button>
+
+     </div>
+
+    `;
+
+   }).join("")}
+
+  </div>
+
  </div>
+
+
+ <div class="card">
+
+  <h2>Mis sobres</h2>
+
+  ${listaSobres()}
+
+ </div>
+
  `;
+
 }
+
 
 function listaSobres(){
 
- if(!sobres.length)
- return "<p>Aún no tienes sobres.</p>";
+ if(!sobres.length){
 
- return `<table>
- <tr><th>Sobre</th><th>Rareza</th><th>Estado</th></tr>
- ${sobres.map(s=>`
- <tr>
- <td>#${String(s.id).padStart(3,"0")}</td>
- <td>${rareza[s.rareza].nombre}</td>
- <td>${estadoSobre(s)}</td>
- </tr>
- `).join("")}
- </table>`;
+  return "<p>Aún no tienes sobres.</p>";
+
+ }
+
+ return `
+
+ <table>
+
+  <tr>
+   <th>Sobre</th>
+   <th>Rareza</th>
+   <th>Estado</th>
+  </tr>
+
+  ${sobres.map(s=>`
+
+   <tr>
+
+    <td>
+     #${String(s.id).padStart(3,"0")}
+    </td>
+
+    <td>
+     ${rareza[s.rareza].nombre}
+    </td>
+
+    <td>
+     ${estadoSobre(s)}
+    </td>
+
+   </tr>
+
+  `).join("")}
+
+ </table>
+
+ `;
+
 }
+
 
 function estadoSobre(s){
- if(s.estado==="abierto")return"🎁 Abierto";
- if(s.estado==="listo")return`🎉 Listo para abrir`;
- return`🎯 Reto #${String(s.reto).padStart(3,"0")} pendiente`;
+
+ if(s.estado==="abierto"){
+
+  return "🎁 Abierto";
+
+ }
+
+ if(s.estado==="listo"){
+
+  return "🎉 Listo para abrir";
+
+ }
+
+ return `
+  🎯 Reto #${String(s.reto).padStart(3,"0")}
+  pendiente
+ `;
+
 }
+
+
+/* =========================
+   SOLICITAR SOBRE
+========================= */
 
 function solicitar(tipo){
 
+ const puntos=puntosDisponibles();
+
+ const coste=costeSobre(tipo);
+
+ /*
+  Comprobamos SIEMPRE los puntos,
+  incluso aunque se llegue desde otra sección.
+ */
+ if(puntos<coste){
+
+  alert(
+   "No tienes suficientes puntos para canjear este sobre. 💗\n\n"+
+   "Tienes: "+puntos+" puntos\n"+
+   "Necesitas: "+coste+" puntos"
+  );
+
+  if(vista==="canje"){
+   canje();
+  }else{
+   sobresVista();
+  }
+
+  return;
+
+ }
+
+
+ /*
+  Reservamos los puntos inmediatamente.
+  Así no se pueden utilizar dos veces.
+ */
  solicitudes.push({
+
   id:solicitudes.length+1,
+
   rareza:tipo,
+
+  coste:coste,
+
   estado:"pendiente"
+
  });
 
  guardar();
 
- alert("Solicitud enviada al administrador 💗");
- sobresVista();
+ alert(
+  "Solicitud enviada al administrador 💗\n\n"+
+  "Puntos reservados: "+coste
+ );
+
+ if(vista==="canje"){
+
+  canje();
+
+ }else{
+
+  sobresVista();
+
+ }
+
 }
+
+
+/* =========================
+   CANJEAR
+========================= */
 
 function canje(){
 
- document.getElementById("app").innerHTML=`
- <div class="card">
- <h2>💌 Canjear duplicados</h2>
- <p>Elige el tipo de sobre que quieres solicitar.</p>
+ const puntos=puntosDisponibles();
 
- <div class="envelopes">
- ${["common","rare","epic","legendary","mystery"].map(r=>`
- <div class="envelope ${r}">
- <h3>${rareza[r].nombre}</h3>
- <p>Coste: ${rareza[r].coste}</p>
- <button class="primary"
- onclick="solicitar('${r}')">
- Solicitar
- </button>
+ document.getElementById("app").innerHTML=`
+
+ <div class="card">
+
+  <h2>💌 Canjear duplicados</h2>
+
+  <p>
+   Tus puntos canjeables:
+  </p>
+
+  <div class="stat">
+
+   <span>Puntos disponibles</span>
+
+   <b>${puntos}</b>
+
+  </div>
+
+  <p>
+   Común = 1 punto ·
+   Raro = 2 puntos ·
+   Épico = 5 puntos
+  </p>
+
+  <p>
+   Solo cuentan los duplicados.
+  </p>
+
+  <p>
+   Los sábados los sobres cuestan la mitad. 🎉
+  </p>
+
  </div>
- `).join("")}
+
+
+ <div class="card">
+
+  <div class="envelopes">
+
+   ${["common","rare","epic","legendary","mystery"]
+   .map(r=>{
+
+    const coste=costeSobre(r);
+
+    const suficientes=
+     puntos>=coste;
+
+    return `
+
+     <div class="envelope ${r}">
+
+      <h3>
+       ${rareza[r].nombre}
+      </h3>
+
+      <p>
+       Coste:
+       <strong>${coste} puntos</strong>
+      </p>
+
+      <p>
+
+       ${
+        suficientes
+        ?"✅ Tienes suficientes puntos"
+        :"❌ No tienes suficientes puntos"
+       }
+
+      </p>
+
+      <button
+
+       class="${suficientes
+        ?"primary"
+        :"secondary"
+       }"
+
+       ${suficientes
+        ?""
+        :"disabled"
+       }
+
+       onclick="${suficientes
+        ?`solicitar('${r}')`
+        :""
+       }">
+
+       ${suficientes
+        ?"Solicitar sobre"
+        :"Puntos insuficientes"
+       }
+
+      </button>
+
+     </div>
+
+    `;
+
+   }).join("")}
+
+  </div>
+
  </div>
- </div>
+
  `;
+
 }
+
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
 
 function estadisticas(){
 
  let html=`
- <div class="card">
- <h2>📊 Estadísticas</h2>
- <div class="stats">
- ${Object.entries(rareza).map(([r,x])=>`
- <div class="stat">
- ${x.nombre}
- <b>${stickers.filter(s=>s.rareza===r&&s.copias>0).length}</b>
- </div>
- `).join("")}
- </div>
- </div>
 
  <div class="card">
- <h3>💗 Reglas</h3>
- <p>Los sábados los sobres cuestan la mitad.</p>
- <p>Máximo 5 retos al día.</p>
- <p>Máximo 1 reto legendario al día.</p>
- <p>Máximo 1 misterio por semana.</p>
+
+  <h2>📊 Estadísticas</h2>
+
+  <div class="stats">
+
+   ${Object.entries(rareza)
+   .map(([r,x])=>`
+
+    <div class="stat">
+
+     ${x.nombre}
+
+     <b>
+      ${stickers.filter(
+       s=>s.rareza===r &&
+       s.copias>0
+      ).length}
+     </b>
+
+    </div>
+
+   `).join("")}
+
+  </div>
+
  </div>
+
+
+ <div class="card">
+
+  <h3>💰 Canjes</h3>
+
+  <p>
+   Puntos obtenidos:
+   <strong>${calcularPuntos()}</strong>
+  </p>
+
+  <p>
+   Puntos reservados:
+   <strong>${puntosReservados()}</strong>
+  </p>
+
+  <p>
+   Puntos disponibles:
+   <strong>${puntosDisponibles()}</strong>
+  </p>
+
+ </div>
+
+
+ <div class="card">
+
+  <h3>💗 Reglas</h3>
+
+  <p>
+   Los sábados los sobres cuestan la mitad.
+  </p>
+
+  <p>
+   Máximo 5 retos al día.
+  </p>
+
+  <p>
+   Máximo 1 reto legendario al día.
+  </p>
+
+  <p>
+   Máximo 1 misterio por semana.
+  </p>
+
+ </div>
+
  `;
 
  document.getElementById("app").innerHTML=html;
+
 }
+
+
+/* =========================
+   ADMIN
+========================= */
 
 function adminVista(){
 
  if(!admin){
 
- document.getElementById("app").innerHTML=`
- <div class="card admin">
- <h2>🔐 Administración</h2>
- <p>Introduce el código de administrador.</p>
- <input id="codigo" type="password">
- <br><br>
- <button class="primary" onclick="entrarAdmin()">Entrar</button>
- </div>
- `;
+  document.getElementById("app").innerHTML=`
 
- return;
+   <div class="card admin">
+
+    <h2>🔐 Administración</h2>
+
+    <p>
+     Introduce el código de administrador.
+    </p>
+
+    <input
+     id="codigo"
+     type="password"
+     placeholder="Código">
+
+    <br><br>
+
+    <button
+     class="primary"
+     onclick="entrarAdmin()">
+
+     Entrar
+
+    </button>
+
+   </div>
+
+  `;
+
+  return;
+
  }
 
+
  document.getElementById("app").innerHTML=`
+
  <div class="card admin">
- <h2>👑 Panel de administración</h2>
 
- <h3>Solicitudes</h3>
+  <h2>👑 Panel de administración</h2>
 
- ${solicitudes.length?
- solicitudes.map(s=>`
- <div class="card">
- <b>Solicitud #${s.id}</b>
- <p>Sobre: ${rareza[s.rareza].nombre}</p>
- <p>Estado: ${s.estado}</p>
 
- ${s.estado==="pendiente"?`
- <button class="primary"
- onclick="aceptar(${s.id})">Aceptar</button>
+  <h3>💰 Puntos</h3>
 
- <button class="danger"
- onclick="rechazar(${s.id})">Rechazar</button>
- `:""}
+  <p>
+   Puntos totales:
+   <strong>${calcularPuntos()}</strong>
+  </p>
+
+  <p>
+   Puntos reservados:
+   <strong>${puntosReservados()}</strong>
+  </p>
+
+  <p>
+   Puntos disponibles:
+   <strong>${puntosDisponibles()}</strong>
+  </p>
+
+
+  <h3>📨 Solicitudes</h3>
+
+  ${
+   solicitudes.length
+
+   ?
+
+   solicitudes.map(s=>`
+
+    <div class="card">
+
+     <b>
+      Solicitud #${s.id}
+     </b>
+
+     <p>
+      Sobre:
+      ${rareza[s.rareza].nombre}
+     </p>
+
+     <p>
+      Coste:
+      ${s.coste||0} puntos
+     </p>
+
+     <p>
+      Estado:
+      ${s.estado}
+     </p>
+
+
+     ${
+      s.estado==="pendiente"
+
+      ?
+
+      `
+
+      <button
+       class="primary"
+       onclick="aceptar(${s.id})">
+
+       Aceptar
+
+      </button>
+
+      <button
+       class="danger"
+       onclick="rechazar(${s.id})">
+
+       Rechazar
+
+      </button>
+
+      `
+
+      :
+
+      ""
+
+     }
+
+    </div>
+
+   `).join("")
+
+   :
+
+   "No hay solicitudes."
+
+  }
+
+
+  <h3>🎯 Retos asignados</h3>
+
+  ${
+   sobres.map(s=>`
+
+    <div class="card">
+
+     <b>
+      Sobre #${String(s.id).padStart(3,"0")}
+     </b>
+
+     <p>
+      Reto #${String(s.reto).padStart(3,"0")}
+     </p>
+
+     <p>
+      Estado: ${s.estado}
+     </p>
+
+
+     ${
+      s.estado==="reto_pendiente"
+
+      ?
+
+      `
+
+      <button
+       class="success"
+       onclick="resultado(${s.id},true)">
+
+       ✅ Reto completado
+
+      </button>
+
+      <button
+       class="danger"
+       onclick="fallarReto(${s.id})">
+
+       ❌ Fallar reto
+
+      </button>
+
+      `
+
+      :
+
+      ""
+
+     }
+
+    </div>
+
+   `).join("")
+
+   :
+
+   "<p>No hay sobres asignados.</p>"
+
+  }
+
  </div>
- `).join("")
- :"No hay solicitudes."}
 
- <h3>Retos asignados</h3>
-
- ${sobres.map(s=>`
- <div class="card">
- <b>Sobre #${String(s.id).padStart(3,"0")}</b>
- <p>Reto #${String(s.reto).padStart(3,"0")}</p>
- <p>Estado: ${s.estado}</p>
-
- ${s.estado==="reto_pendiente"?`
- <button class="primary"
- onclick="resultado(${s.id},true)">
- Reto completado
- </button>
-
- <button class="danger"
- onclick="resultado(${s.id},false)">
- Reto fallado
- </button>
- `:""}
- </div>
- `).join("")}
- </div>
  `;
+
 }
+
+
+/* =========================
+   ENTRAR ADMIN
+========================= */
 
 function entrarAdmin(){
 
- if(document.getElementById("codigo").value==="0701"){
+ const codigo=
+  document.getElementById("codigo").value;
+
+ if(codigo==="0701"){
+
   admin=true;
+
   adminVista();
+
  }else{
+
   alert("Código incorrecto");
+
  }
+
 }
+
+
+/* =========================
+   ACEPTAR SOLICITUD
+========================= */
 
 function aceptar(id){
 
- const s=solicitudes.find(x=>x.id===id);
+ const s=
+  solicitudes.find(x=>x.id===id);
 
- const disponibles=retos.filter(x=>x.estado==="disponible");
+ if(!s)return;
 
- if(!disponibles.length){
-  alert("No quedan retos disponibles.");
+ if(s.estado!=="pendiente"){
+
+  alert("Esta solicitud ya ha sido gestionada.");
+
   return;
+
  }
 
- const r=disponibles[Math.floor(Math.random()*disponibles.length)];
+ const disponibles=
+  retos.filter(
+   x=>x.estado==="disponible"
+  );
+
+ if(!disponibles.length){
+
+  alert("No quedan retos disponibles.");
+
+  return;
+
+ }
+
+ const r=
+  disponibles[
+   Math.floor(
+    Math.random()*disponibles.length
+   )
+  ];
 
  r.estado="asignado";
 
  const sobre={
+
   id:sobres.length+1,
+
   rareza:s.rareza,
+
   reto:r.id,
+
   estado:"reto_pendiente"
+
  };
 
  r.sobre=sobre.id;
+
  sobres.push(sobre);
+
  s.estado="aceptada";
 
  guardar();
+
  adminVista();
+
 }
+
+
+/* =========================
+   RECHAZAR
+========================= */
 
 function rechazar(id){
 
- const s=solicitudes.find(x=>x.id===id);
- if(s)s.estado="rechazada";
+ const s=
+  solicitudes.find(x=>x.id===id);
+
+ if(!s)return;
+
+ /*
+  Al pasar a rechazada,
+  sus puntos dejan de estar reservados.
+ */
+ s.estado="rechazada";
 
  guardar();
+
  adminVista();
+
 }
+
+
+/* =========================
+   FALLAR RETO
+========================= */
+
+function fallarReto(sobreId){
+
+ const sobre=
+  sobres.find(x=>x.id===sobreId);
+
+ if(!sobre){
+
+  alert("No se ha encontrado el sobre.");
+
+  return;
+
+ }
+
+ const reto=
+  retos.find(x=>x.id===sobre.reto);
+
+ if(!reto){
+
+  alert("No se ha encontrado el reto.");
+
+  return;
+
+ }
+
+ /*
+  El reto vuelve a estar disponible.
+ */
+ reto.estado="disponible";
+
+ reto.sobre=null;
+
+ /*
+  El sobre continúa esperando
+  un nuevo reto.
+ */
+ sobre.estado="reto_pendiente";
+
+ guardar();
+
+ alert(
+  "Reto fallado ❌\n\n"+
+  "El reto ha vuelto a estar disponible."
+ );
+
+ adminVista();
+
+}
+
+
+/* =========================
+   RESULTADO DEL RETO
+========================= */
 
 function resultado(sobreId,completado){
 
- const sobre=sobres.find(x=>x.id===sobreId);
- const reto=retos.find(x=>x.id===sobre.reto);
+ const sobre=
+  sobres.find(x=>x.id===sobreId);
+
+ if(!sobre)return;
+
+ const reto=
+  retos.find(x=>x.id===sobre.reto);
+
+ if(!reto)return;
+
 
  if(completado){
+
   reto.estado="completado";
+
   sobre.estado="listo";
+
+  alert(
+   "Reto completado ✅\n\n"+
+   "El sobre ya está listo para abrir."
+  );
+
  }else{
-  reto.estado="disponible";
-  reto.sobre=null;
-  sobre.estado="reto_pendiente";
+
+  fallarReto(sobreId);
+
+  return;
+
  }
 
  guardar();
+
  adminVista();
+
 }
+
+
+/* =========================
+   INICIO
+========================= */
 
 album();
 
 </script>
+
 </body>
 </html>
